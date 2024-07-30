@@ -1,0 +1,27 @@
+Greatest Common Divisor (GCD) also known as Highest Common Factor (HCF)
+The GCD of two integers a and b is the largest number that divides both of a and b without any remainder.
+
+Using built in math function:
+
+import math
+  
+print("The gcd of 18 and 45 is : ", math.gcd(18, 45))
+
+
+Computing GCD using loop:
+
+a=int(input("Enter first value: ")) 
+b=int(input("Enter first value: ")) 
+if(a==0):
+    print("GCD(",a,",",b,") is:", b)
+if(b==0):
+    print("GCD(",a,",",b,") is:", a)
+x=a
+y=b
+if (a!=0 and b!=0):
+    while (b!=0):
+        r=a%b
+        a=b
+        b=r 
+    print("GCD(",x,",",y,") is:", a)    
+
