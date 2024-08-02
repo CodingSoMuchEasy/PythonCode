@@ -1,0 +1,32 @@
+Greatest Common Divisor (GCD) also known as Highest Common Factor (HCF)
+The GCD of two integers a and b is the largest number that divides both of a and b without any remainder.
+
+Using simple function
+
+def findgcd(a,b):
+    if(a==0):
+        return b
+    if(b==0):
+        return a
+    if (a!=0 and b!=0):
+        while (b!=0):
+            r=a%b
+            a=b
+            b=r 
+    return a
+    
+x=int(input("Enter first value: ")) 
+y=int(input("Enter second value: ")) 
+print("GCD(",x,",",y,") is:", findgcd(x,y))
+
+
+
+Using Recursion:
+
+def findgcd(a, b):
+    if(b == 0):
+        return a
+    else:
+        return findgcd(b, a % b)
+
+print("The gcd of 18 and 45 is : ", findgcd(18,45))
