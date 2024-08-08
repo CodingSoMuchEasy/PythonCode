@@ -1,0 +1,51 @@
+Without using property
+
+class employee:
+    def __init__(self):
+        self.salary = 0
+
+    def hra(self):
+        return self.salary* 15/100
+
+empObj = employee()
+empObj.salary=1000
+print("Basic salary of employee is :",empObj.salary)
+print("HRA:", empObj.hra())
+
+
+Using property
+
+class employee:
+    def __init__(self):
+        self.__salary =0
+      
+    @property
+       
+    # Getter method
+    def salary(self):
+        print("Getting value...")
+        return self.__salary
+      
+    # Setter method
+    @salary.setter
+    def salary(self, s):
+        print("Setting value...")
+        self.__salary = s
+        
+    def hra(self):
+        return self.__salary * 15/100
+  
+    # Deleter method
+    @salary.deleter
+    def salary(self):
+       del self.__salary
+  
+empObj = employee();
+empObj.salary = 1000
+print ("Basic Salary:",empObj.salary) 
+print("HRA:", empObj.hra())
+del empObj.salary
+#print (empObj.salary)
+#Above statement will display error
+
+Python @property decorator - Helps in defining the properties effortlessly,  without manually calling the inbuilt function property(). Which is used to return the property attributes of a class from the stated getter, setter and deleter as parameters.
